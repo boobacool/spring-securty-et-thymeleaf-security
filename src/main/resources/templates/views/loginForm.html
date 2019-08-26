@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/main_layout}">
+<head>
+<meta charset="UTF-8"/>
+<title>Page Connexion</title>
+</head>
+<body>
+	<div layout:fragment="content" class="container mySpace">
+
+		<div class="alert alert-danger text-center" th:if="${param.error}">
+			<h3>Email ou mot de passe incorrect</h3>
+
+		</div>
+
+		<form th:action="@{/login}" th:object="${user}" method="POST">
+			<div class="form-group">
+				<label for="email" class="form-control-label">Email</label>
+				<input type="text" class="form-control" name="username" id="username"/>
+			</div>
+			<div class="form-group">
+				<label for="password" class="form-control-label">Password</label>
+				<input type="password" class="form-control" name="password" id="password"/>
+			</div>
+			
+			<input type="submit" value="Valider" class="btn btn-primary"/>
+		
+		</form>
+	</div>
+</body>
+</html>

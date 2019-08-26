@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/main_layout}">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ajouter Utilisateur</title>
+</head>
+
+<body>
+	<div layout:fragment="content" class="container mySpace">
+
+		<form th:action="@{/enregistrer}" th:object="${user}" method="POST">
+			<div class="form-group">
+				<label for="email" class="form-control-label">Email</label>
+				<input type="text" class="form-control" th:field="*{email}" id="email">
+			</div>
+			<div class="form-group">
+				<label for="password" class="form-control-label">Password</label>
+				<input type="password" class="form-control" th:field="*{password}" id="password">
+			</div>
+			<div class="form-group">
+				<label for="name" class="form-control-label">Name</label>
+				<input type="text" class="form-control" th:field="*{name}" id="name">
+			</div>
+			<input type="submit" value="Valider" class="btn btn-primary">
+		
+		</form>
+	</div>
+</body>
+
+</html>

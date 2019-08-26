@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{fragments/main_layout}" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+	<meta charset="UTF-8" />
+
+</head>
+
+<body>
+	<div layout:fragment="content" class="container mySpace">
+		<div>
+          Vous n'avez pas accès à cette page |<span th:text="${message}"></span>| <span th:text="${status}" class="text text-danger"></span>
+		</div>
+		<div>
+			Veuillez contacter l'administrateur!!!!!!!!
+		</div>
+	</div>
+</body>
+
+</html>
